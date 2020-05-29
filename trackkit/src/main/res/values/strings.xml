@@ -34,4 +34,6 @@
     <string name="view_subreddits">View Subreddits</string>
     <string name="empty_widget_text">Empty</string>
     <string name="button_analytics">button</string>
+    <string name="comments_activity_title">Comments</string>
+    <string name="post_activity_title">Posts</string>
 </resources>

@@ -3,6 +3,7 @@ package com.krinotech.trackkit.view;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
@@ -44,6 +45,13 @@ public class ViewPostsActivity extends AppCompatActivity {
         String subredditId = getIntent().getStringExtra(getString(R.string.subreddit_id_extra));
         int end = redditUrl.length() - 1;
         redditUrl = redditUrl.substring(1, end);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+        }
+
+        setTitle(getString(R.string.post_activity_title));
 
         showProgress();
         postsViewModel.getSubredditPosts(redditUrl, subredditId).observe(this, subredditPosts -> {

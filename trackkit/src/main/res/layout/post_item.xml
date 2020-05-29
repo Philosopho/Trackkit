@@ -8,20 +8,9 @@
             name="post"
             type="com.krinotech.data.SubredditPost" />
     </data>
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/post_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardBackgroundColor="@color/defaultBackground"
-        app:strokeColor="@color/colorPrimary"
-        app:strokeWidth="5dp"
-        style="@style/Widget.MaterialComponents.CardView"
-        >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
         android:scrollbars="horizontal"
         >
 
@@ -29,9 +18,11 @@
             android:id="@+id/post_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="@dimen/subredditMarginTopInvisible"
-            android:adjustViewBounds="true"
+            android:layout_marginTop="@dimen/post_margin"
+            android:layout_marginStart="@dimen/post_margin"
+            android:layout_marginEnd="@dimen/post_margin"
             android:contentDescription="@string/image"
+            android:scaleType="fitXY"
             android:visibility="visible"
             app:imageUrl="@{post.thumbnail}"
             app:layout_constraintBottom_toTopOf="@id/divider"
@@ -44,7 +35,9 @@
             android:id="@+id/post_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/post_margin"
+            android:layout_marginStart="@dimen/post_margin"
+            android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.title}"
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +51,9 @@
             android:id="@+id/subreddit_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/post_margin"
+            android:layout_marginStart="@dimen/post_margin"
+            android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.subredditName}"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/colorPrimary"
@@ -73,7 +68,9 @@
             android:id="@+id/posted_by"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/post_margin"
+            android:layout_marginStart="@dimen/post_margin"
+            android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.postedBy}"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/colorAccent"
@@ -100,7 +97,9 @@
             android:id="@+id/number_comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/post_margin"
+            android:layout_marginStart="@dimen/post_margin"
+            android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.numberOfCommentsString}"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/colorAccent"
@@ -137,5 +136,4 @@
             app:layout_constraintStart_toEndOf="@id/view_comments"
             app:layout_constraintTop_toBottomOf="@id/divider" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
 </layout>

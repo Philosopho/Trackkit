@@ -29,24 +29,9 @@
             android:layout_height="wrap_content"
             >
 
-            <ImageView
-                android:id="@+id/subreddit_image"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="@dimen/subredditMarginTopInvisible"
-                android:contentDescription="@string/image"
-                android:visibility="visible"
-                app:imageUrl="@{subreddit.headerImage}"
-                app:layout_constraintBottom_toTopOf="@id/subreddit_description"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subscribers"
-                tools:src="https://styles.redditmedia.com/t5_2n3cad/styles/communityIcon_y13t3vajf7x41.png" />
-
             <CheckBox
                 android:id="@+id/subreddit_checkbox"
-                app:layout_constraintBottom_toTopOf="@+id/subreddit_image"
+                app:layout_constraintBottom_toTopOf="@+id/subreddit_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.9"
                 app:layout_constraintStart_toEndOf="@+id/subreddit_title"
@@ -122,14 +107,14 @@
                 android:ellipsize="end"
                 android:maxLines="@integer/initial_description_max_lines"
                 android:paddingStart="16dp"
-                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
                 android:text="@{subreddit.description}"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="@color/colorAccent"
                 app:layout_constraintBottom_toTopOf="@id/subreddit_description_divider"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subreddit_image"
+                app:layout_constraintTop_toBottomOf="@id/subscribers"
                 tools:text="@tools:sample/lorem/random" />
             <View
                 android:id="@+id/subreddit_description_divider"
@@ -148,7 +133,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:text="@string/expand_subreddit_desc"
                 style="?attr/borderlessButtonStyle"
                 app:layout_constraintTop_toBottomOf="@id/subreddit_description_divider"
@@ -162,7 +146,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:text="@string/view_posts"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/subreddit_description_expand"
