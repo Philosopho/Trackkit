@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion androidSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+sourceCompatibility = javaSourceCompatibility
+targetCompatibility = javaTargetCompatibility
+
+dependencies {
+    api project(path: ':domain')
+    testImplementation project(path: ":domain", configuration: "testDependencies")
+
+    annotationProcessor dagger.compiler
+
+    // Android Architecture Components
+    implementation dataDependencies.archLifeCycleLiveData
+    api dataDependencies.room
+    annotationProcessor dataDependencies.roomAnnotationProcessor
+    // Network
+    api dataDependencies.retrofit
+    api dataDependencies.retrofitConverterGson
+    api dataDependencies.idlingResource
+
+    // Testing
+    testImplementation dataDependencies.archCoreTesting
+    testImplementation dataDependencies.retrofitMock
+}

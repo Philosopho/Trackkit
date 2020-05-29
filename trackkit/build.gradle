@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdkVersion androidSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.krinotech.trackkit"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    final String DIMENSION_NAME = "version"
+
+    flavorDimensions DIMENSION_NAME
+
+    productFlavors {
+        mock {
+            final String MOCK_ID_SUFFIX = ".mock"
+            final String MOCK_VERSION_SUFFIX = "-mock"
+
+            dimension DIMENSION_NAME
+            applicationIdSuffix MOCK_ID_SUFFIX
+            versionNameSuffix MOCK_VERSION_SUFFIX
+        }
+        prod {
+            final String PROD_ID_SUFFIX = ".prod"
+            final String PROD_VERSION_SUFFIX = "-prod"
+
+            dimension DIMENSION_NAME
+            applicationIdSuffix PROD_ID_SUFFIX
+            versionNameSuffix PROD_VERSION_SUFFIX
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation project(path: ":data")
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation project(path: ":domain", configuration: "testDependencies")
+
+    implementation trackkitDependencies.appCompat
+    implementation trackkitDependencies.constraintLayout
+    implementation trackkitDependencies.recyclerView
+    implementation trackkitDependencies.material
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    // Other
+    implementation trackkitDependencies.picasso
+    implementation trackkitDependencies.daggerAndroid
+    implementation trackkitDependencies.daggerAndroidSupport
+    implementation trackkitDependencies.archComponentsExtensions
+    implementation trackkitDependencies.timber
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.3'
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.4.2'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+    annotationProcessor trackkitDependencies.annotationProcessorAndroid
+    annotationProcessor dagger.compiler
+
+    androidTestImplementation androidX.junit
+    androidTestImplementation androidX.rules
+    androidTestImplementation androidX.runner
+
+    // Espresso Dependencies
+    androidTestImplementation espressoDependencies.espressoCore
+    androidTestImplementation espressoDependencies.espressoIntents
+    androidTestImplementation espressoDependencies.espressoContrib
+    androidTestImplementation espressoDependencies.espressoAccessibility
+    androidTestImplementation espressoDependencies.espressoWeb
+
+    // mock flavor
+    mockImplementation dataDependencies.retrofitMock
+    mockImplementation dataDependencies.retrofit
+    mockImplementation trackkitDependencies.lorem
+}

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Trackkit</string>
+    <string name="image">Image</string>
+    <string name="checkbox">Checkbox</string>
+    <string name="expand_subreddit_desc">Expand</string>
+    <string name="collapse_subreddit_desc">Collapse</string>
+    <string name="subreddits_fragment_name">Subreddits</string>
+    <string name="tracking_fragment_name">Tracking</string>
+    <string name="preferences_fragment_name">Preferences</string>
+    <string name="popular_subreddits_menu_item">Popular Subreddits</string>
+    <string name="new_subreddits_menu_item">New Subreddits</string>
+    <string name="default_subreddits_menu_item">Default Subreddits</string>
+    <string name="network_error">No network connection. Please turn on internet connection and close and restart the app.</string>
+    <string name="new_selected">New subreddits are already selected!</string>
+    <string name="popular_selected">Popular subreddits are already selected!</string>
+    <string name="default_selected">Default subreddits are already selected!</string>
+    <string name="view_posts">View Posts</string>
+    <string name="view_comments">View Comments</string>
+    <string name="view_post">View Post</string>
+    <string name="reddit_url_extra">reddit_url_extra</string>
+    <string name="post_url_extra">post_url_extra</string>
+    <string name="no_comments">There are no comments for this post.</string>
+    <string name="posts_retrieval_error">Something went wrong! Unable to retrieve Posts</string>
+    <string name="post_id_extra">post_id_extra</string>
+    <string name="no_posts">No posts are available for this subreddit.</string>
+    <string name="error_loading_subreddits">Error loading subreddits.</string>
+    <string name="no_tracking_subreddits">You are currently not tracking any subreddits.</string>
+    <string name="subreddit_id_extra">subreddit_id_extra</string>
+    <string name="image_thumbnail">Image Thumbnail</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="widget_subreddits_tracking_number">Subreddits Tracking: %1$d</string>
+    <string name="WIDGET_TAB_TRACKING_EXTRA">WIDGET_TAB_TRACKING_EXTRA</string>
+    <string name="view_subreddits">View Subreddits</string>
+    <string name="empty_widget_text">Empty</string>
+    <string name="button_analytics">button</string>
+</resources>

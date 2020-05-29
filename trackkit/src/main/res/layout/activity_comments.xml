@@ -1,0 +1,39 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.krinotech.trackkit.view.CommentsActivity"
+    >
+    <data>
+        <variable
+            name="postTitle"
+            type="com.krinotech.data.PostTitle"
+            />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/error_text_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="24sp"
+            tools:text="@string/network_error"
+            >
+        </TextView>
+
+        <include
+            android:id="@+id/pb_included"
+            layout="@layout/pb_comments" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</layout>

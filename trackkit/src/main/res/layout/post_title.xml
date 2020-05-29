@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="postTitle"
+            type="com.krinotech.data.PostTitle"
+            />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/post_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{postTitle.title}"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            tools:text="@tools:sample/lorem/random"
+            tools:maxLines="4" />
+
+        <TextView
+            android:id="@+id/title_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@{postTitle.selfText}"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            tools:text="@tools:sample/lorem/random"
+            tools:maxLines="4" />
+
+        <ViewStub
+            android:id="@+id/exoplayer_stub"
+            android:inflatedId="@+id/exoplayer_inflate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/exoplayer_layout"
+            />
+    </LinearLayout>
+</layout>

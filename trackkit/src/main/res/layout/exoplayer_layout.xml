@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="postVideo"
+            type="com.krinotech.data.PostVideo" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/exoplayer_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        tools:showIn="@layout/post_title"
+        >
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/image_thumbnail"
+            android:src="@drawable/white_background" />
+
+        <ProgressBar
+            android:id="@+id/pb_exoPlayerProgress"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            tools:showIn="@layout/activity_comments">
+        </ProgressBar>
+
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/exoplayerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+</layout>

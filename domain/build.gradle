@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+
+configurations {
+    testDependencies.extendsFrom testImplementation
+}
+
+dependencies {
+    testImplementation testing.junit
+    testImplementation testing.mockito
+
+    api dagger.dagger
+    annotationProcessor dagger.compiler
+}
+
+sourceCompatibility = javaSourceCompatibility
+targetCompatibility = javaTargetCompatibility

@@ -1,0 +1,4 @@
+rootProject.name='Trackkit'
+include ':trackkit'
+include ':data'
+include ':domain'

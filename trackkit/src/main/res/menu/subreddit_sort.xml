@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MainActivity">
+    <item
+        android:id="@+id/mi_popular"
+        android:title="@string/popular_subreddits_menu_item"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/mi_new"
+        android:title="@string/new_subreddits_menu_item"
+        />
+    <item
+        android:id="@+id/mi_default"
+        android:title="@string/default_subreddits_menu_item"
+        />
+</menu>
