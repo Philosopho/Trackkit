@@ -10,7 +10,7 @@
     <string name="popular_subreddits_menu_item">Popular Subreddits</string>
     <string name="new_subreddits_menu_item">New Subreddits</string>
     <string name="default_subreddits_menu_item">Default Subreddits</string>
-    <string name="network_error">No network connection. Please turn on internet connection and close and restart the app.</string>
+    <string name="network_error">No network connection. Please turn on internet connection.</string>
     <string name="new_selected">New subreddits are already selected!</string>
     <string name="popular_selected">Popular subreddits are already selected!</string>
     <string name="default_selected">Default subreddits are already selected!</string>
