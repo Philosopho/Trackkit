@@ -130,14 +130,13 @@ public class MainActivity extends AppCompatActivity {
                             Timber.d(stringResponse.errorBody().toString());
                         }
                     }
-                    hideProgressBar();
                 }
                 else {
                     if(stringResponse.errorBody() != null) {
                         Timber.d(stringResponse.errorBody().toString());
                     }
-                    hideProgressBar();
                 }
+                hideProgressBar();
             }
 
             @Override

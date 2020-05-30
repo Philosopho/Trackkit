@@ -44,6 +44,7 @@ public class DataBindingHelper {
             }
             catch (IllegalArgumentException exception) {
                 Timber.d("onEmptyString");
+                imageView.setBackground(imageView.getResources().getDrawable(R.color.defaultBackground));
             }
         }
     }

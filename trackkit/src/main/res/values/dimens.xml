@@ -3,10 +3,6 @@
     <dimen name="subredditImageHeightInvisible">0dp</dimen>
     <dimen name="subredditMarginTopInvisible">16dp</dimen>
 
-    <!--
-Refer to App Widget Documentation for margin information
-http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
-    -->
     <dimen name="widget_margin">8dp</dimen>
     <dimen name="post_margin">8dp</dimen>
     <item name="guideline_above_title" type="dimen" format="float">0.01</item>
