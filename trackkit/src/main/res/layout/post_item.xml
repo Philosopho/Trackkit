@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.36" />
+            app:layout_constraintGuide_percent="@dimen/guideline_above_image" />
 
         <ImageView
             android:id="@+id/post_thumbnail"
@@ -30,8 +30,8 @@
             android:layout_marginEnd="@dimen/post_margin"
             android:contentDescription="@string/image"
             app:imageUrl="@{post.thumbnail}"
-            app:layout_constraintHeight_percent="0.45"
-            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintHeight_percent="@dimen/post_thumbnail_height_p"
+            app:layout_constraintWidth_percent="@dimen/post_thumbnail_width_p"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline6"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.01" />
+            app:layout_constraintGuide_percent="@dimen/guideline_above_title" />
 
         <TextView
             android:id="@+id/post_title"
@@ -52,12 +52,14 @@
             android:layout_marginTop="@dimen/post_margin"
             android:layout_marginEnd="@dimen/post_margin"
             android:maxLines="2"
+            android:minLines="2"
+            android:ellipsize="end"
             android:text="@{post.title}"
             android:textColor="@color/colorAccent"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintHeight_percent="@dimen/post_title_height_p"
             app:layout_constraintWidth_percent="1"
-            app:layout_constraintTop_toBottomOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/guideline7"
@@ -68,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.22" />
+            app:layout_constraintGuide_percent="@dimen/guideline_above_meta_data" />
 
         <TextView
             android:id="@+id/subreddit_name"
@@ -127,7 +129,7 @@
             android:layout_height="0dp"
             android:layout_margin="16dp"
             android:text="@string/view_comments"
-            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintHeight_percent="0.13"
             app:layout_constraintWidth_percent="0.45"
             app:layout_constraintEnd_toStartOf="@id/view_post"
             app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +144,7 @@
             android:layout_height="0dp"
             android:layout_margin="16dp"
             android:text="@string/view_post"
-            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintHeight_percent="0.13"
             app:layout_constraintWidth_percent="0.45"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/view_comments"
