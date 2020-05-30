@@ -73,8 +73,8 @@ public class ViewPostsActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
                 this, RecyclerView.HORIZONTAL, false);
 
+        activityViewPostBinding.rvViewPosts.setHasFixedSize(true);
         activityViewPostBinding.rvViewPosts.setLayoutManager(linearLayoutManager);
-
         activityViewPostBinding.rvViewPosts.setAdapter(postsAdapter);
     }
 

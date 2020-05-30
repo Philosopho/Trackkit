@@ -10,130 +10,154 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="horizontal"
+        android:layout_height="wrap_content"
         >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.36" />
 
         <ImageView
             android:id="@+id/post_thumbnail"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/post_margin"
             android:layout_marginStart="@dimen/post_margin"
             android:layout_marginEnd="@dimen/post_margin"
             android:contentDescription="@string/image"
-            android:scaleType="fitXY"
-            android:visibility="visible"
             app:imageUrl="@{post.thumbnail}"
-            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintHeight_percent="0.45"
+            app:layout_constraintWidth_percent="0.95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/number_comments"
+            app:layout_constraintTop_toBottomOf="@id/guideline6"
             tools:src="https://styles.redditmedia.com/t5_2n3cad/styles/communityIcon_y13t3vajf7x41.png" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.01" />
 
         <TextView
             android:id="@+id/post_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/post_margin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/post_margin"
+            android:layout_marginTop="@dimen/post_margin"
             android:layout_marginEnd="@dimen/post_margin"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
             android:text="@{post.title}"
+            android:textColor="@color/colorAccent"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintWidth_percent="0.95"
+            app:layout_constraintTop_toBottomOf="@id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/subreddit_name"
+            app:layout_constraintBottom_toTopOf="@id/guideline7"
             tools:text="Title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.22" />
 
         <TextView
             android:id="@+id/subreddit_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/post_margin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/post_margin"
             android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.subredditName}"
+            android:textColor="@color/colorAccent"
             android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintWidth_percent="0.20"
+            app:layout_constraintEnd_toStartOf="@id/posted_by"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/post_title"
-            app:layout_constraintBottom_toTopOf="@+id/posted_by"
+            app:layout_constraintBottom_toTopOf="@+id/post_thumbnail"
             tools:text="r/title" />
 
         <TextView
             android:id="@+id/posted_by"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/post_margin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/post_margin"
             android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.postedBy}"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/colorAccent"
-            app:layout_constraintBottom_toTopOf="@+id/number_comments"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/subreddit_name"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintBottom_toTopOf="@+id/post_thumbnail"
+            app:layout_constraintEnd_toStartOf="@id/number_comments"
+            app:layout_constraintStart_toEndOf="@id/subreddit_name"
+            app:layout_constraintTop_toBottomOf="@+id/post_title"
             tools:text="Alex Smith" />
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/colorPrimary"
-            app:layout_constraintTop_toBottomOf="@+id/post_thumbnail"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+
         <TextView
             android:id="@+id/number_comments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/post_margin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/post_margin"
             android:layout_marginEnd="@dimen/post_margin"
             android:text="@{post.numberOfCommentsString}"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/colorAccent"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintWidth_percent="0.20"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.09"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/posted_by"
+            app:layout_constraintStart_toEndOf="@id/posted_by"
+            app:layout_constraintTop_toBottomOf="@+id/post_title"
             app:layout_constraintBottom_toTopOf="@+id/post_thumbnail"
             tools:text="12,000 comments" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/view_comments"
-            style="?attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_margin="16dp"
             android:text="@string/view_comments"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintWidth_percent="0.45"
             app:layout_constraintEnd_toStartOf="@id/view_post"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider" />
+            app:layout_constraintTop_toBottomOf="@id/post_thumbnail"
+            app:layout_constraintBottom_toBottomOf="@id/guideline4"
+            style="?attr/borderlessButtonStyle"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/view_post"
-            style="?attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_margin="16dp"
             android:text="@string/view_post"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintWidth_percent="0.45"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@id/view_comments"
-            app:layout_constraintTop_toBottomOf="@id/divider" />
+            app:layout_constraintTop_toBottomOf="@id/post_thumbnail"
+            app:layout_constraintBottom_toBottomOf="@id/guideline4"
+            style="?attr/borderlessButtonStyle"
+            />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

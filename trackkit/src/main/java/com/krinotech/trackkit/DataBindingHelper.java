@@ -1,7 +1,6 @@
 package com.krinotech.trackkit;
 
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.databinding.BindingAdapter;
@@ -26,6 +25,9 @@ public class DataBindingHelper {
             try {
                 Picasso.get()
                         .load(url)
+                        .fit()
+                        .error(R.color.defaultBackground)
+                        .placeholder(R.color.defaultBackground)
                         .into(imageView, new Callback() {
                             @Override
                             public void onSuccess() {
@@ -36,36 +38,13 @@ public class DataBindingHelper {
 
                             @Override
                             public void onError(Exception e) {
-                                // TODO: Some Images are not loading on emulator or smaller devices, but loads on physical
                                 Timber.d("onError");
-                                shrinkImageView(imageView);
                             }
                         });
             }
             catch (IllegalArgumentException exception) {
                 Timber.d("onEmptyString");
-                shrinkImageView(imageView);
             }
         }
-    }
-
-    private static void shrinkImageView(ImageView imageView) {
-        Timber.d("Shrink Image View");
-        ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
-        ViewGroup.MarginLayoutParams marginLayoutParams =
-                (ViewGroup.MarginLayoutParams) imageView.getLayoutParams();
-
-        int subredditImageInvisible = (int) imageView
-                .getResources()
-                .getDimension(R.dimen.subredditImageHeightInvisible);
-
-        layoutParams.height = subredditImageInvisible;
-        marginLayoutParams.topMargin = subredditImageInvisible;
-
-        imageView.setLayoutParams(layoutParams);
-        imageView.setLayoutParams(marginLayoutParams);
-        imageView.setImageDrawable(null);
-        noImageLoaded = true;
-        idlingResource.setIdleState(true);
     }
 }
