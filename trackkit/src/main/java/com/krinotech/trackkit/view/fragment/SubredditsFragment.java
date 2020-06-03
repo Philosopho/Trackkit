@@ -168,7 +168,7 @@ public class SubredditsFragment extends Fragment implements SubredditsAdapter.Vi
     private void sendAnalytics(SubredditType subredditType) {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, subredditType.name());
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, getString(R.string.button_analytics));
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, getString(R.string.analytics_btn));
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
@@ -217,7 +217,7 @@ public class SubredditsFragment extends Fragment implements SubredditsAdapter.Vi
     }
 
     private void showErrorText() {
-        Toast.makeText(this.getContext(), getString(R.string.error_loading_subreddits), Toast.LENGTH_SHORT)
+        Toast.makeText(this.getContext(), getString(R.string.loading_subreddits_error), Toast.LENGTH_SHORT)
                 .show();
         fragmentSubredditsBinding.tvNoSubreddits.setVisibility(View.GONE);
         fragmentSubredditsBinding.pbSubreddits.setVisibility(View.GONE);

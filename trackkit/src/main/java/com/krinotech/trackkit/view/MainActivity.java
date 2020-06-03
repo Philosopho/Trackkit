@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
             binding.pager.setAdapter(trackkitFragmentStateAdapter);
 
             String[] tabNames = {
-                    getString(R.string.subreddits_fragment_name),
-                    getString(R.string.tracking_fragment_name)
+                    getString(R.string.subreddits_fragment_title),
+                    getString(R.string.tracking_fragment_title)
             };
 
             TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(binding.tabLayout, binding.pager,
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
             int tabStart = 0;
             if(widgetIntent != null) {
-                tabStart = widgetIntent.getIntExtra(getString(R.string.WIDGET_TAB_TRACKING_EXTRA), 0);
+                tabStart = widgetIntent.getIntExtra(getString(R.string.widget_tab_tracking_extra), 0);
             }
             binding.pager.setCurrentItem(tabStart);
 

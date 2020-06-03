@@ -32,8 +32,8 @@ public class SubredditsViewHolder extends RecyclerView.ViewHolder {
 
         this.subredditListItemBinding = subredditListItemBinding;
         Resources resources = subredditListItemBinding.subredditCard.getResources();
-        expandText = resources.getString(R.string.expand_subreddit_desc);
-        collapseText = resources.getString(R.string.collapse_subreddit_desc);
+        expandText = resources.getString(R.string.expand_subreddit_btn);
+        collapseText = resources.getString(R.string.collapse_subreddit_btn);
         maxLinesExpand = resources.getInteger(R.integer.initial_description_max_lines);
         maxLinesCollapse = resources.getInteger(R.integer.expanded_description_max_lines);
     }

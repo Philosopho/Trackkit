@@ -42,7 +42,7 @@ public class TrackkitWidgetProvider extends AppWidgetProvider {
 
     private static PendingIntent setUpPendingIntent(Context context, int appWidgetId, int tabStart) {
         Intent appIntent = new Intent(context, MainActivity.class);
-        appIntent.putExtra(context.getString(R.string.WIDGET_TAB_TRACKING_EXTRA), tabStart);
+        appIntent.putExtra(context.getString(R.string.widget_tab_tracking_extra), tabStart);
         return PendingIntent.getActivity(context, appWidgetId, appIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 

@@ -1,39 +1,47 @@
 <resources>
     <string name="app_name">Trackkit</string>
+    <!-- Accessibility -->
     <string name="image">Image</string>
     <string name="checkbox">Checkbox</string>
-    <string name="expand_subreddit_desc">Expand</string>
-    <string name="collapse_subreddit_desc">Collapse</string>
-    <string name="subreddits_fragment_name">Subreddits</string>
-    <string name="tracking_fragment_name">Tracking</string>
-    <string name="preferences_fragment_name">Preferences</string>
+    <string name="image_thumbnail">Image Thumbnail</string>
+    <!-- Activity / Fragment Titles -->
+    <string name="subreddits_fragment_title">Subreddits</string>
+    <string name="tracking_fragment_title">Tracking</string>
+    <string name="preferences_fragment_title">Preferences</string>
+    <string name="comments_activity_title">Comments</string>
+    <string name="post_activity_title">Posts</string>
+    <!-- Menu -->
     <string name="popular_subreddits_menu_item">Popular Subreddits</string>
     <string name="new_subreddits_menu_item">New Subreddits</string>
     <string name="default_subreddits_menu_item">Default Subreddits</string>
+    <!-- Button -->
+    <string name="view_posts_btn">View Posts</string>
+    <string name="view_comments_btn">View Comments</string>
+    <string name="view_post_btn">View Post</string>
+    <string name="expand_subreddit_btn">Expand</string>
+    <string name="collapse_subreddit_btn">Collapse</string>
+    <string name="analytics_btn">button</string>
+    <!-- Extras -->
+    <string name="reddit_url_extra">reddit_url_extra</string>
+    <string name="post_url_extra">post_url_extra</string>
+    <string name="post_id_extra">post_id_extra</string>
+    <string name="subreddit_id_extra">subreddit_id_extra</string>
+    <string name="widget_tab_tracking_extra">widget_tab_tracking_extra</string>
+    <!-- Widget -->
+    <string name="appwidget_text">Tracking Widget</string>
+    <string name="add_widget">Add widget</string>
+    <string name="widget_subreddits_tracking_number">Subreddits Tracking: %1$d</string>
+    <string name="view_subreddits">View Subreddits</string>
+    <string name="empty_widget_text">Empty</string>
+    <!-- Error -->
     <string name="network_error">No network connection. Please turn on internet connection.</string>
+    <string name="posts_retrieval_error">Something went wrong! Unable to retrieve Posts</string>
     <string name="new_selected">New subreddits are already selected!</string>
     <string name="popular_selected">Popular subreddits are already selected!</string>
     <string name="default_selected">Default subreddits are already selected!</string>
-    <string name="view_posts">View Posts</string>
-    <string name="view_comments">View Comments</string>
-    <string name="view_post">View Post</string>
-    <string name="reddit_url_extra">reddit_url_extra</string>
-    <string name="post_url_extra">post_url_extra</string>
     <string name="no_comments">There are no comments for this post.</string>
-    <string name="posts_retrieval_error">Something went wrong! Unable to retrieve Posts</string>
-    <string name="post_id_extra">post_id_extra</string>
     <string name="no_posts">No posts are available for this subreddit.</string>
-    <string name="error_loading_subreddits">Error loading subreddits.</string>
+    <string name="loading_subreddits_error">Error loading subreddits.</string>
     <string name="no_tracking_subreddits">You are currently not tracking any subreddits.</string>
-    <string name="subreddit_id_extra">subreddit_id_extra</string>
-    <string name="image_thumbnail">Image Thumbnail</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="widget_subreddits_tracking_number">Subreddits Tracking: %1$d</string>
-    <string name="WIDGET_TAB_TRACKING_EXTRA">WIDGET_TAB_TRACKING_EXTRA</string>
-    <string name="view_subreddits">View Subreddits</string>
-    <string name="empty_widget_text">Empty</string>
-    <string name="button_analytics">button</string>
-    <string name="comments_activity_title">Comments</string>
-    <string name="post_activity_title">Posts</string>
+
 </resources>

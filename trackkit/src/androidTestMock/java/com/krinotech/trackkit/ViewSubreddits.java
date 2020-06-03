@@ -69,9 +69,9 @@ public class ViewSubreddits {
     @Test
     public void launch_tabLayout_shouldHaveTabTitlesInCorrectPositions() {
 
-        String expectSubredditsTitle = resources.getString(R.string.subreddits_fragment_name);
-        String expectTrackingTitle = resources.getString(R.string.tracking_fragment_name);
-        String expectPreferenceTitle = resources.getString(R.string.preferences_fragment_name);
+        String expectSubredditsTitle = resources.getString(R.string.subreddits_fragment_title);
+        String expectTrackingTitle = resources.getString(R.string.tracking_fragment_title);
+        String expectPreferenceTitle = resources.getString(R.string.preferences_fragment_title);
 
         testRule.launchActivity(null);
 
@@ -93,12 +93,12 @@ public class ViewSubreddits {
         testRule.launchActivity(null);
 
         int position = 0;
-        String expand = resources.getString(R.string.expand_subreddit_desc);
+        String expand = resources.getString(R.string.expand_subreddit_btn);
 
 
         mainScreen.tapDescriptionButtonAtPosition(position);
 
-        String collapse = resources.getString(R.string.collapse_subreddit_desc);
+        String collapse = resources.getString(R.string.collapse_subreddit_btn);
 
         mainScreen.verifyRecyclerViewItemText(collapse, position);
 
